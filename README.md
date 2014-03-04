@@ -1,4 +1,14 @@
-blogit
+# Blogit
 ======
 
-a simple blogging application using flask and mongokit
+* Simple blogging micro-framework.
+
+#### Back-end
+* Python
+* [Flask](http://flask.pocoo.org/docs/)
+
+#### Front-end
+* HTML
+
+#### Database
+* [Mongokit](https://pythonhosted.org/Flask-MongoKit/)
