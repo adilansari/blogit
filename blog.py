@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 class BlogPost(Document):
     __collection__ = 'posts'
+    __database__ = 'blogit'
     structure = {
         'title': basestring,
         'body': basestring,
@@ -32,7 +33,7 @@ def get_rank():
 
 @app.route('/')
 def home():
-    posts = db.BlogPost.find().sort("date_creation", -1)
+    posts = db.posts.find()
     return render_template('home.html', posts=posts)
 
 @app.route('/add', methods=['GET','POST'])
