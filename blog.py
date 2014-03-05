@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 class BlogPost(Document):
     __collection__ = 'posts'
-    __database__ = 'blogit'
     structure = {
         'title': basestring,
         'body': basestring,
@@ -20,7 +19,7 @@ class BlogPost(Document):
     required_fields = ['title', 'date_creation']
     default_values = {
         'rank': 0,
-        'date_creation': datetime
+        'date_creation': datetime.utcnow
     }
     use_dot_notation = True
 
